@@ -1,6 +1,6 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 import routes from './src/routes/routes';
 
 const app = express();
