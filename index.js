@@ -16,9 +16,9 @@ mongoose.connect('mongodb://localhost/productsdb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+//routes
+routes(app);
 
 app.get('/', (req, res) => res.send(`Store server running on port ${PORT}`));
-
-routes(app);
 
 app.listen(PORT, () => console.log(`Your server is running on port ${PORT}`));
