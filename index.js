@@ -8,6 +8,9 @@ const PORT = 4000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); 
 
+//mongooose setup
+app.connect(`mongodb://localhost:4000/productsdb`, useNewUrlParser, useUnifiedTopology)
+
 app.get('/', (req, res) =>
     res.send(`Store server running on port ${PORT}`)
 );
