@@ -7,7 +7,7 @@ import {
 const routes = (app) => {
   app.route('/products').post(addnewProduct);
   app.route('/products').get(getProducts);
-  app.route('/products/:id').get(getProductWithID);
+  app.route('/products/:ProductID').get(getProductWithID);
 };
 
 export default routes;
