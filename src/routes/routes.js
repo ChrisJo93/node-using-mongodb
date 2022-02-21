@@ -1,6 +1,8 @@
 import { addnewProduct } from '../controllers/controllers';
 
-export const routes = (app) => {
+const routes = (app) => {
   app.route('/products');
-  app.post(addNewProduct);
+  app.post(addnewProduct);
 };
+
+export default routes;
