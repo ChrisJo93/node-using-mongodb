@@ -15,7 +15,7 @@ export const addnewProduct = (req, res) => {
 };
 
 export const getProducts = (req, res) => {
-  Product.find((err, Product) => {
+  Product.find({}, (err, Product) => {
     if (err) {
       res.send(err);
     }
@@ -23,13 +23,13 @@ export const getProducts = (req, res) => {
   });
 };
 
-// export const getProductWithID = (req, res) => {
-// let gotProduct = new Product(req.body)
+export const getProductWithID = (req, res) => {
+  let gotProduct = new Product(req.body);
 
-//     gotProduct.findById((req.params.ProductID, err, Product) => {
-//         if (err) {
-//             res.send(err);
-//         }
-//         res.json(Product);
-//     });
-// };
+  gotProduct.findById(req.params.ProductID, (err, Product) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(Product);
+  });
+};
